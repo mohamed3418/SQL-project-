@@ -1,5 +1,5 @@
 # SQL-project-
-Analyzing films data (Udacity advanced data analysis track) SQL project.
+# Analyzing films data (Udacity advanced data analysis track) SQL project.
 
 > txt file contain sql queries to eztract data from data base.
 
