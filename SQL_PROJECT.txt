@@ -1,0 +1,36 @@
+select g.name,sum(il.Quantity) from Track t
+join genre g 
+on t.GenreId=g.GenreId
+join InvoiceLine il
+on il.TrackId=t.TrackId
+GROUP by  1
+order by 2 desc
+limit 10 ;
+
+
+select c.FirstName||' ' || c.LastName customer_name ,sum(UnitPrice) as spent_money from Invoiceline il
+JOIN Invoice i 
+on il.InvoiceId=i.InvoiceId
+join Customer c 
+on c.CustomerId = i.CustomerId
+GROUP by 1
+order by 2 DESC;
+
+
+
+select a.Name Artist ,count(*) NUM_albums from Artist a
+join album alb 
+on a.ArtistId=alb.ArtistId
+group by 1
+order by 2 desc
+limit 10;
+
+
+select c.company Company_Name ,sum(total) as Total_Invoices from Invoiceline il
+JOIN Invoice i 
+on il.InvoiceId=i.InvoiceId
+join Customer c 
+on c.CustomerId = i.CustomerId
+where c.company not null
+GROUP by 1
+order by 2 DESC;
